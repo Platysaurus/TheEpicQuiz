@@ -1,2 +1,2 @@
 # TheEpicQuiz
-A interactive quiz with a unexpected result.
+A interactive quiz with an unexpected result.
