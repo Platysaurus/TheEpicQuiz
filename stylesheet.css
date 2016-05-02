@@ -1,0 +1,217 @@
+/** {
+  border: 1px dotted black;
+}*/
+html {
+    min-height: 100%
+}
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grad {
+  background-color: #779CD4; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #779CD4, #9850C8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #779CD4, #9850C8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #779CD4, #9850C8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #779CD4, #9850C8); /* Standard syntax */
+}
+.grad1 {
+  background-color: #C0FFB3; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #C0FFB3, #6CF4F9); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #C0FFB3, #6CF4F9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #C0FFB3, #6CF4F9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #C0FFB3, #6CF4F9); /* Standard syntax */
+}
+.grad2 {
+  background-color: #FFA672; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #FFA672, #FD6E6E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #FFA672, #FD6E6E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #FFA672, #FD6E6E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #FFA672, #FD6E6E); /* Standard syntax */ 
+}
+.grad3 {
+  background-color: #F1FFDA; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #F1FFDA, #FFDE86); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #F1FFDA, #FFDE86); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #F1FFDA, #FFDE86); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F1FFDA, #FFDE86); /* Standard syntax #1B9095*/ 
+}
+.grad4 {
+  background-color: #3D9BE9; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #3D9BE9, #1B9095); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #3D9BE9, #1B9095); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #3D9BE9, #1B9095); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #3D9BE9, #1B9095); /* Standard syntax #1B9095*/ 
+}
+.grad5 {
+  background-color: #D55CC1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #D55CC1, #B02BF2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #D55CC1, #B02BF2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #D55CC1, #B02BF2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #D55CC1, #B02BF2); /* Standard syntax */
+}
+
+h1 {
+  text-align: center;
+  margin: 10% 5%;
+  line-height: 200%;
+  font-weight: 100;
+  font-size: 250%;
+}
+h2 {
+  text-align: center;
+  font-weight: 300;
+}
+p {
+  text-align: center;
+  margin: 3%;
+  line-height: 200%;
+}
+.activity0 p{
+  margin: 0;
+}
+.absoluteButton {
+  position: absolute;
+  height: 10%;
+  margin: 0 auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.button {
+  background-color: #12B208; /* Green */
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 32px;
+  outline: none;
+}
+
+.button:active {
+  background-color: #15D209;
+}
+
+.button:hover {
+  background-color: #12B208;
+  filter:  opacity(.9);
+  -moz-filter: opacity(.9);
+  -webkit-filter: opacity(.9);
+}
+.activity {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  text-align: center;
+}
+
+.activity0 {
+}
+.activity1 {
+  display: none;
+}
+.activity2 {
+  display: none;
+}
+.activity3 {
+  display: none;
+}
+.result {
+  display: none;
+  position: absolute;
+  margin : 0 auto;
+  height: 90%;
+  width: 100%;
+} 
+.userInfo {
+  display: none;
+  position: absolute;
+  margin : 0 auto;
+  height: 90%;
+  width: 100%;
+}
+.userInfo h1 {
+  font-weight: 300;
+}
+.color-selector input {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.red {
+  background-color: red;
+  background-clip: content-box;
+}
+
+.yellow {
+  background-color: gold;
+  background-clip: content-box;
+}
+.green {
+  background-color: limegreen;
+  background-clip: content-box;
+}
+.blue {
+  background-color: dodgerblue;
+  background-clip: content-box;
+}
+.black {
+  background-color: rgb(10,10,10);
+  background-clip: content-box;
+}
+.purple
+{
+  background-color: rgb(132,0,255);
+  background-clip: content-box;
+}
+
+input[type=text], select {
+    width: 12%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.color-selector input:checked +.color-square {
+  border: 1px solid black;
+}
+.color-square {
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  /*transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -webkit-transition: all 100ms ease-in;*/
+  width: 75px;
+  height: 75px;
+}
+.color-square:hover {
+  filter:  opacity(.8);
+  -moz-filter: opacity(.8);
+  -webkit-filter: opacity(.8);
+}
+.teamtext {
+  width: 200px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.teamtext p {
+  line-height: normal;
+  padding: 10px;
+}
