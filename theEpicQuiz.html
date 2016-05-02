@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Epic Quiz</title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+</head>
+<body class="grad">
+  <!-- jQuery library-->
+  <script>
+    var animalString = "";
+    var getName;
+    function submitName()
+    { 
+      getName = $('input[name=nameField]').val();
+      if (getName !== "") {
+        $('.activity0').css('display', 'none');
+        $('.activity1').css('display', 'block');
+        $('body').switchClass("grad", "grad1", 1000, "easeInOutQuad");
+      } else {
+        getName = undefined;
+      }
+    }
+  </script>
+  <div class="activity activity0">
+    <div>
+      <h1>THIS IS A <span style="font-weight: 300">QUIZ</span> THAT WILL LOOK INTO YOUR SOUL.<br>START THE JOURNEY!</h1>
+      <h2>Please answer the questions for a surprise ending!</h2>
+      <p>What should we call you?</p>
+        <div class='wrapper'>
+          <form id='nameForm'>
+              <input name="nameField" type='text' maxlength='25'>
+          </form>
+        </div>
+    </div>
+    <div class="absoluteButton">
+<!--       <button class="button" type="button" onclick="submitName()">Start The Quiz</button> -->
+      <button class="button" type="button" onclick="submitName()">Start the Quiz</button>
+    </div>
+  </div>
+
+  <!-- script for handling dropdown activity1-->
+  <script>
+    // boolean to test if the choice was made
+    function submitSeason()
+    {
+      var getSeason = $('select[name=season]').val();
+      // getChoice = true;
+      // animalString = season;
+      if (getSeason !== undefined) {
+    $('.activity1').css('display', 'none');
+    $('.activity2').css('display', 'block');
+    $('body').switchClass("grad1", "grad2", 1000, "easeInOutQuad");
+    animalString += getSeason;
+    }else {
+    getSeason = undefined;
+    }
+  }
+  </script>
+  
+  <div class="activity activity1">
+    <div>
+      <h1>Activity #1 </h1>
+      <h2>Pick your favorite season!</h2>
+      <p> </p>
+      <select name="season">
+       <!--  <optgroup label="Pick a season"> -->
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="fall">Fall</option>
+          <option value="winter">Winter</option>
+       <!--  </optgroup> -->
+      </select>
+    </div>
+    <div class="absoluteButton">
+      <button class="button" type='button' onclick="submitSeason()">Next Question</button>
+    </div>
+  </div>
+  
+  <script>
+  function submitFood(){
+    var getFood = $('input[name=favFood]:checked').val();
+    if (getFood !== undefined){
+      $('.activity2').css('display', 'none');
+      $('.activity3').css('display', 'block');
+      $('body').switchClass("grad2", "grad3", 1000, "easeInOutQuad");
+      animalString += getFood;
+    } else {
+      getFood = undefined;
+    }
+  }
+  </script> 
+  <div class="activity activity2">
+    <div>
+      <h1>Activity #2</h1>
+      <h2>Choose your favorite food</h2>
+      <p>I like to eat:</p>
+      <form>
+        <input id="favfood" type="radio" name="favFood" value="Cold">Vegetables 
+        <input id="favfood" type="radio" name="favFood" value="Warm">Chicken
+        <input id="favfood" type="radio" name="favFood" value="Warm">Beef
+        <input id="favfood" type="radio" name="favFood" value="Cold">Seafood
+      </form>
+    </div>
+    <div class="absoluteButton">
+      <button class="button" type='button' onclick="submitFood()">Next Question</button>
+    </div>
+  </div>
+  <script>
+
+    function submitColor() {
+   
+    var getColor = $('input[name=favColor]:checked').val();
+  
+  if (getColor !== undefined) {
+    $('.activity3').css('display', 'none');
+    $('.result').css('display', 'block');
+    $('body').switchClass("grad3", "grad4", 1000, "easeInOutQuad");
+    animalString += getColor;
+  }else {
+    getColor = undefined;
+  }
+}
+</script>
+
+<div class="activity activity3">
+  <div>
+    <h1>Activity #3</h1>
+    <h2>Choose one color that you like the most.</h2>
+    <form>
+      <div class="color-selector" id="color-group">
+        <input id="red" type="radio" name="favColor" value="warm">
+        <label class="color-square red" for="red"></label>
+
+        <input id="yellow" type="radio" name="favColor" value="warm">
+        <label class="color-square yellow" for="yellow"></label>
+
+        <input id="green" type="radio" name="favColor" value="cold">
+        <label class="color-square green" for="green"></label>
+
+        <input id="blue" type="radio" name="favColor" value="cold">
+        <label class="color-square blue" for="blue"></label>
+
+        <input id="purple" type="radio" name="favColor" value="warm">
+        <label class="color-square purple" for="purple"></label>
+
+        <input id="black" type="radio" name="favColor" value="cold">
+        <label class="color-square black" for="black"></label>
+      </div> 
+    </form>
+  </div>
+  <div class="absoluteButton">
+    <button class="button" type='button' onclick="submitColor()">Next Question</button>
+  </div>
+</div>
+<script>
+function submitResult() {
+var getResult = document.getElementById('result');
+  
+        // multiple ternary operator, the same as if, else if, else 
+        getResult.textContent = (animalString === "winterColdcold") ? getName + ", your spirit animal is penguin."
+                              : (animalString === "winterColdwarm") ? getName + ", your spirit animal is polarbear."
+                              : (animalString === "winterWarmcold") ? getName + ", your spirit animal is pigeon."
+                              : (animalString === "winterWarmwarm") ? getName + ", your spirit animal is wolf."
+                              : (animalString === "springColdcold") ? getName + ", your spirit animal is seal."
+                              : (animalString === "springColdwarm") ? getName + ", your spirit animal is rabbit."
+                              : (animalString === "springWarmcold") ? getName + ", your spirit animal is deer."
+                              : (animalString === "springWarmwarm") ? getName + ", your spirit animal is tiger."
+                              : (animalString === "summerColdcold") ? getName + ", your spirit animal is peccary."
+                              : (animalString === "summerColdwarm") ? getName + ", your spirit animal is piranha."
+                              : (animalString === "summerWarmcold") ? getName + ", your spirit animal is mosquito."
+                              : (animalString === "summerWarmwarm") ? getName + ", your spirit animal is dog."
+                              : (animalString === "fallColdcold")   ? getName + ", your spirit animal is badger."
+                              : (animalString === "fallColdwarm")   ? getName + ", your spirit animal is brownbear."
+                              : (animalString === "fallWarmcold")   ? getName + ", your spirit animal is lynx."
+                              : (animalString === "fallWarmwarm")   ? getName + ", your spirit animal is cow."
+                              : getName + ", your spirit animal is a goat.";
+        
+        $('.result').css('display', 'none');
+        $('.userInfo').css('display', 'block');
+        $('body').switchClass("grad4", "grad5", 1000, "easeInOutQuad");
+}
+   
+</script>
+<div class=" activity result">
+  <div>
+    <h1>DRUMROLL...</h1>
+    <p>We didn't look that deep into your soul, you still have to do it yourself.<br>But we can show you your spirit animal.
+    </p>
+  </div>
+  <div class="absoluteButton">
+    <button class="button" type="button" onclick="submitResult()">See your spirit animal</button>
+  </div>
+</div>
+  
+<div class ="activity userInfo">
+  <div>
+  <h1 id="result"></h1>
+  </div>
+  <form action="https://formspree.io/tnyung@gmail.com" method="POST">
+    <input type = "text" name="firstname" placeholder="First Name">
+    <input type = "text" name="userEmail" placeholder = "Your Email">
+    <input type = "text" name="pswd" placeholder="Your Password">
+    <input type="checkbox" name="optin" checked> <span>Receive surprise!</span>
+    <br>
+    <input class="button" type="submit" name="submit"><br>
+  </form>
+  <div class="absoluteButton">
+  <button class="button" type="button" onclick="window.location.reload()">Retake the Quiz</button>
+  </div>
+</div>
+
+
+<div class="teamtext">
+  <p><small>Made by Platysaurus:<br>Teresa, Ania and Jarrett<br>for RP #26 Hackathon</small></p>
+</div>
+
+
+</body>
+</html>
